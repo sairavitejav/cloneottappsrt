@@ -18,6 +18,7 @@ import {
   HeaderContainer,
   Icon,
   GamingHeader,
+  ULContainer,
   GamingVideosContainer,
 } from './styledComponents'
 
@@ -149,7 +150,9 @@ class GamingRoute extends Component {
   render() {
     return (
       <>
-        <Header />
+        <ULContainer>
+          <Header />
+        </ULContainer>
         <SideMainContainer>
           <SideHeader />
           {this.renderDifferentViews()}

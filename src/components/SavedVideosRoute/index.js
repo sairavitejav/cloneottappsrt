@@ -15,6 +15,7 @@ import {
   HeaderContainer,
   SavedHeader,
   Icon,
+  ULContainer,
 } from './styledComponents'
 
 const SavedVideosRoute = () => (
@@ -24,7 +25,9 @@ const SavedVideosRoute = () => (
       const showEmptyView = savedVideosList.length === 0
       return (
         <>
-          <Header />
+          <ULContainer>
+            <Header />
+          </ULContainer>
           <SideMainContainer>
             <SideHeader />
             <SavedVideosContainer
@@ -38,7 +41,7 @@ const SavedVideosRoute = () => (
                     alt="no saved videos"
                   />
                   <NoSavedHeader isDarkTheme={isDarkTheme}>
-                    No Saved Videos Found
+                    No saved videos found
                   </NoSavedHeader>
                   <NoSavedDesc>
                     You can save your videos while watching them.

@@ -19,7 +19,7 @@ export const Titles = styled.div`
   display: flex;
   flex-direction: column;
 `
-export const VideoTitle = styled.h1`
+export const VideoTitle = styled.p`
   color: ${props => (props.isDarkTheme ? '#ffffff' : '#181818')};
   font-size: 15px;
   margin-top: 0px;

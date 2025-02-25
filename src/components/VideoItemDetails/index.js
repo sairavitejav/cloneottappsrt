@@ -108,28 +108,24 @@ class VideoItemDetails extends Component {
   renderVideoItemView = () => (
     <SavedVideosContext.Consumer>
       {value => {
-        const {saveOrDeleteVideos, isDarkTheme} = value
+        const {saveOrDeleteVideos, isDarkTheme, savedVideosList} = value
         const {videoItemDetails, isLiked, isDisLiked} = this.state
-        const {
-          channel,
-          description,
-          title,
-          videoUrl,
-          viewCount,
-          publishedAt,
-        } = videoItemDetails
+        const {channel, description, title, videoUrl, viewCount, publishedAt} =
+          videoItemDetails
         const channelData = {
           name: channel.name,
           profileImageUrl: channel.profile_image_url,
           subscriberCount: channel.subscriber_count,
         }
-        const {name, profileImageUrl, subscriberCount} = channelData
-        const publishedOn = formatDistanceToNow(new Date(publishedAt)).split(
-          ' ',
+        const isSaved = savedVideosList.some(
+          item => item.id === videoItemDetails.id,
         )
+        const {name, profileImageUrl, subscriberCount} = channelData
+        const publishedOn = formatDistanceToNow(new Date(publishedAt))
         const onSaveOrDeleteVideo = () => {
           saveOrDeleteVideos({...videoItemDetails, ...channelData})
         }
+        const buttonText = isSaved ? 'Saved' : 'Save'
         return (
           <VideoItemContainer
             isDarkTheme={isDarkTheme}
@@ -140,9 +136,7 @@ class VideoItemDetails extends Component {
             <ViewsLikesContainer>
               <ViewsContainer>
                 <ItemDesc>{viewCount} views</ItemDesc>
-                <ItemDesc>
-                  {publishedOn[1]} {publishedOn[2]} ago
-                </ItemDesc>
+                <ItemDesc>{publishedOn}</ItemDesc>
               </ViewsContainer>
               <LikesContainer>
                 <ItemButton
@@ -161,9 +155,13 @@ class VideoItemDetails extends Component {
                   <ReactIconDisLike />
                   DisLike
                 </ItemButton>
-                <ItemButton onClick={onSaveOrDeleteVideo} type="button">
+                <ItemButton
+                  isActive={isSaved}
+                  onClick={onSaveOrDeleteVideo}
+                  type="button"
+                >
                   <ReactIconSave />
-                  Save
+                  {buttonText}
                 </ItemButton>
               </LikesContainer>
             </ViewsLikesContainer>

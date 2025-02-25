@@ -23,6 +23,13 @@ export const LinksContainer = styled.div`
 
 export const Links = styled(NavLink)`
   text-decoration: none;
+  padding: 10px;
+  &.active-link {
+    background-color: ${props => (props.isDarkTheme ? '#7e858e' : '#d7dfe9')};
+    .icon {
+      color: #ff0b37;
+    }
+  }
 `
 
 export const IconLinkContainer = styled.div`
@@ -36,7 +43,7 @@ export const Icon = styled.div`
   color: ${props => (props.isDarkTheme ? '#ebebeb' : '#383838')};
 `
 
-export const LinkHeader = styled.h1`
+export const LinkHeader = styled.p`
   color: ${props => (props.isDarkTheme ? '#ffffff' : '#383838')};
   font-size: 20px;
 `

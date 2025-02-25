@@ -25,6 +25,8 @@ import {
   FailureHeader,
   FailureDesc,
   FailureButton,
+  ULContainer,
+  Container,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -124,6 +126,9 @@ class Home extends Component {
                   <FailureDesc isDarkTheme={isDarkTheme}>
                     Try different key words or remove search filter
                   </FailureDesc>
+                  <FailureButton onClick={this.onFailureRetry} type="button">
+                    Retry
+                  </FailureButton>
                 </FailureContainer>
               )}
             </div>
@@ -187,15 +192,16 @@ class Home extends Component {
           const {isDarkTheme} = value
           return (
             <>
-              <Header />
+              <ULContainer>
+                <Header />
+              </ULContainer>
               <SideMainContainer>
                 <SideHeader />
-                <HomeContainer data-testid="home">
+                <HomeContainer data-testid="home" isDarkTheme={isDarkTheme}>
                   {showBanner && (
                     <BannerContainer data-testid="banner">
-                      <div>
+                      <Container>
                         <LogoImage
-                          data-testid="banner"
                           src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
                           alt="nxt watch logo"
                         />
@@ -203,18 +209,18 @@ class Home extends Component {
                           Buy Nxt Watch Premium prepaid plans with UPI
                         </BannerDesc>
                         <BannerButton>GET IT NOW</BannerButton>
-                      </div>
-                      <div>
+                      </Container>
+                      <Container>
                         <CloseButton
                           data-testid="close"
                           onClick={this.removeBanner}
                         >
                           <IoCloseSharp />
                         </CloseButton>
-                      </div>
+                      </Container>
                     </BannerContainer>
                   )}
-                  <HomeVideosContainer isDarkTheme={isDarkTheme}>
+                  <HomeVideosContainer>
                     <InputContainer isDarkTheme={isDarkTheme}>
                       <Input
                         isDarkTheme={isDarkTheme}
@@ -224,6 +230,7 @@ class Home extends Component {
                         placeholder="Search"
                       />
                       <SearchIconButton
+                        type="button"
                         data-testid="searchButton"
                         isDarkTheme={isDarkTheme}
                         onClick={this.applyUserSearch}

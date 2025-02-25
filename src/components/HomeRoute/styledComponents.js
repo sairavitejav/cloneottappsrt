@@ -13,6 +13,9 @@ export const BannerContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `
+export const Container = styled.div`
+  padding: 0px;
+`
 
 export const LogoImage = styled.img`
   width: 150px;
@@ -42,7 +45,7 @@ export const HomeContainer = styled.div`
 `
 
 export const HomeVideosContainer = styled.div`
-  background-color: ${props => (props.isDarkTheme ? '#181818' : '#f9f9f9')};
+
   min-height: 100vh;
   padding: 20px;
 `
@@ -109,4 +112,8 @@ export const FailureButton = styled.button`
   border-width: 0px;
   cursor: pointer;
   outline: none;
+`
+export const ULContainer = styled.ul`
+  padding: 0px;
+  margin: 0px;
 `

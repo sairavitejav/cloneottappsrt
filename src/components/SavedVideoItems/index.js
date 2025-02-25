@@ -14,7 +14,7 @@ import {
 const SavedVideoItems = props => {
   const {eachVideo} = props
   const {id, thumbnailUrl, title, name, viewCount, publishedAt} = eachVideo
-  const publishedOn = formatDistanceToNow(new Date(publishedAt)).split(' ')
+  const publishedOn = formatDistanceToNow(new Date(publishedAt))
   return (
     <SavedVideosContext.Consumer>
       {value => {
@@ -29,9 +29,7 @@ const SavedVideoItems = props => {
                   <VideoDetails>{name}</VideoDetails>
                   <CountViewsContainer>
                     <VideoDetails>{viewCount} views</VideoDetails>
-                    <VideoDetails>
-                      {publishedOn[1]} {publishedOn[2]} ago
-                    </VideoDetails>
+                    <VideoDetails>{publishedOn}</VideoDetails>
                   </CountViewsContainer>
                 </Titles>
               </DetailsContainer>

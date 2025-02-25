@@ -59,7 +59,7 @@ export const FailureButton = styled.button`
   outline: none;
 `
 export const ReactPlayers = styled(ReactPlayer)`
-  width: 100%;
+  width:100%;
 `
 export const VideoItemTitle = styled.p`
   color: ${props => (props.isDarkTheme ? '#ffffff' : '#000000')};

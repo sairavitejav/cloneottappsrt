@@ -19,6 +19,7 @@ import {
   FailureHeader,
   FailureDesc,
   FailureButton,
+  ULContainer,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -153,7 +154,9 @@ class TrendingRoute extends Component {
   render() {
     return (
       <>
-        <Header />
+        <ULContainer>
+          <Header />
+        </ULContainer>
         <SideMainContainer>
           <SideHeader />
           {this.renderDifferentViews()}

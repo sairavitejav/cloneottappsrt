@@ -16,6 +16,7 @@ import {
   PopupButtonContainer,
   CloseButton,
   ConfirmButton,
+  LogoList,
 } from './styledComponents'
 
 const Header = props => (
@@ -35,11 +36,11 @@ const Header = props => (
         : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
       return (
         <NavContainer isDarkTheme={isDarkTheme}>
-          <div>
+          <LogoList>
             <Link to="/">
               <LogoImage src={logoUrl} alt="website logo" />
             </Link>
-          </div>
+          </LogoList>
           <HeaderProfileContainer>
             <ThemeButton
               data-testid="theme"

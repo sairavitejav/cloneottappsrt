@@ -14,20 +14,14 @@ import {
 
 const HomeAllVideos = props => {
   const {eachVideoDetails} = props
-  const {
-    id,
-    title,
-    channel,
-    publishedAt,
-    thumbnailUrl,
-    viewCount,
-  } = eachVideoDetails
+  const {id, title, channel, publishedAt, thumbnailUrl, viewCount} =
+    eachVideoDetails
   const channelData = {
     name: channel.name,
     profileImageUrl: channel.profile_image_url,
   }
   const {name, profileImageUrl} = channelData
-  const publishedOn = formatDistanceToNow(new Date(publishedAt)).split(' ')
+  const publishedOn = formatDistanceToNow(new Date(publishedAt))
   return (
     <SavedVideosContext.Consumer>
       {value => {
@@ -43,9 +37,7 @@ const HomeAllVideos = props => {
                   <VideoDetails>{name}</VideoDetails>
                   <CountViewsContainer>
                     <VideoDetails>{viewCount} views</VideoDetails>
-                    <VideoDetails>
-                      {publishedOn[1]} {publishedOn[2]} ago
-                    </VideoDetails>
+                    <VideoDetails>{publishedAt}|{publishedOn}</VideoDetails>
                   </CountViewsContainer>
                 </Titles>
               </DetailsContainer>

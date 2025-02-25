@@ -15,7 +15,7 @@ export const LogoImage = styled.img`
   cursor: pointer;
 `
 
-export const HeaderProfileContainer = styled.div`
+export const HeaderProfileContainer = styled.li`
   display: flex;
   align-items: center;
 `
@@ -76,4 +76,7 @@ export const ConfirmButton = styled(LogoutButton)`
   color: #ffffff;
   border-width: 0px;
   background-color: #3b82f6;
+`
+export const LogoList = styled.li`
+  list-style-type: none;
 `

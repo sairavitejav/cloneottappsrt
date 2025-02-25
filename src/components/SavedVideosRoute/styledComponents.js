@@ -62,3 +62,7 @@ export const SavedHeader = styled.h1`
   color: ${props => (props.isDarkTheme ? '#ffffff' : '#000000')};
   font-size: 40px;
 `
+export const ULContainer = styled.ul`
+  padding: 0px;
+  margin: 0px;
+`

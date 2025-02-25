@@ -82,3 +82,7 @@ export const GamingVideosContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
 `
+export const ULContainer = styled.ul`
+  padding: 0px;
+  margin: 0px;
+`

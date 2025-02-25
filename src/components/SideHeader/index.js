@@ -24,33 +24,50 @@ const SideHeader = () => (
       return (
         <SideContainer isDarkTheme={isDarkTheme}>
           <LinksContainer>
-            <Links to="/">
+            <Links
+              exact
+              to="/"
+              activeClassName="active-link"
+              isDarkTheme={isDarkTheme}
+            >
               <IconLinkContainer>
-                <Icon isDarkTheme={isDarkTheme}>
+                <Icon isDarkTheme={isDarkTheme} className="icon">
                   <IoMdHome />
                 </Icon>
                 <LinkHeader isDarkTheme={isDarkTheme}>Home</LinkHeader>
               </IconLinkContainer>
             </Links>
-            <Links to="/trending">
+            <Links
+              to="/trending"
+              activeClassName="active-link"
+              isDarkTheme={isDarkTheme}
+            >
               <IconLinkContainer>
-                <Icon isDarkTheme={isDarkTheme}>
+                <Icon isDarkTheme={isDarkTheme} className="icon">
                   <FaFire />
                 </Icon>
                 <LinkHeader isDarkTheme={isDarkTheme}>Trending</LinkHeader>
               </IconLinkContainer>
             </Links>
-            <Links to="/gaming">
+            <Links
+              to="/gaming"
+              activeClassName="active-link"
+              isDarkTheme={isDarkTheme}
+            >
               <IconLinkContainer>
-                <Icon isDarkTheme={isDarkTheme}>
+                <Icon isDarkTheme={isDarkTheme} className="icon">
                   <SiYoutubegaming />
                 </Icon>
                 <LinkHeader isDarkTheme={isDarkTheme}>Gaming</LinkHeader>
               </IconLinkContainer>
             </Links>
-            <Links to="/saved-videos">
+            <Links
+              to="/saved-videos"
+              activeClassName="active-link"
+              isDarkTheme={isDarkTheme}
+            >
               <IconLinkContainer>
-                <Icon isDarkTheme={isDarkTheme}>
+                <Icon isDarkTheme={isDarkTheme} className="icon">
                   <RiMenuAddLine />
                 </Icon>
                 <LinkHeader isDarkTheme={isDarkTheme}>Saved videos</LinkHeader>

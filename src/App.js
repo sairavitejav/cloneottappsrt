@@ -20,7 +20,9 @@ class App extends Component {
     const isSaved = savedVideosList.find(item => item.id === video.id)
     if (isSaved) {
       const filteredList = savedVideosList.filter(item => item.id !== video.id)
-      this.setState({savedVideosList: filteredList})
+      this.setState({
+        savedVideosList: filteredList,
+      })
     } else {
       this.setState(prevState => ({
         savedVideosList: [...prevState.savedVideosList, video],

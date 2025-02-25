@@ -79,3 +79,7 @@ export const FailureButton = styled.button`
   cursor: pointer;
   outline: none;
 `
+export const ULContainer = styled.ul`
+  padding: 0px;
+  margin: 0px;
+`
