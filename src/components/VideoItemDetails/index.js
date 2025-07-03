@@ -110,8 +110,14 @@ class VideoItemDetails extends Component {
       {value => {
         const {saveOrDeleteVideos, isDarkTheme, savedVideosList} = value
         const {videoItemDetails, isLiked, isDisLiked} = this.state
-        const {channel, description, title, videoUrl, viewCount, publishedAt} =
-          videoItemDetails
+        const {
+          channel,
+          description,
+          title,
+          videoUrl,
+          viewCount,
+          publishedAt,
+        } = videoItemDetails
         const channelData = {
           name: channel.name,
           profileImageUrl: channel.profile_image_url,
@@ -131,7 +137,7 @@ class VideoItemDetails extends Component {
             isDarkTheme={isDarkTheme}
             data-testid="videoItemDetails"
           >
-            <ReactPlayers url={videoUrl} controls />
+            <ReactPlayers url={videoUrl} controls width="100%" />
             <VideoItemTitle isDarkTheme={isDarkTheme}>{title}</VideoItemTitle>
             <ViewsLikesContainer>
               <ViewsContainer>
