@@ -6,6 +6,7 @@ export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 `
 
 export const FormContainer = styled.form`
@@ -17,6 +18,21 @@ export const FormContainer = styled.form`
   padding: 40px;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 1024px) {
+    width: 50vw;
+    padding: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 70vw;
+    padding: 25px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 90vw;
+    padding: 20px;
+  }
 `
 
 export const LogoContainer = styled.div`
@@ -28,6 +44,14 @@ export const LogoContainer = styled.div`
 export const LogoImage = styled.img`
   width: 200px;
   margin: 10px;
+
+  @media screen and (max-width: 768px) {
+    width: 150px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 120px;
+  }
 `
 
 export const LabelInputContainer = styled.div`
@@ -78,7 +102,14 @@ export const LoginButton = styled.button`
   cursor: pointer;
   outline: none;
   border-width: 0px;
+  font-size: 16px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+    padding: 8px;
+  }
 `
+
 export const ErrorMessage = styled.p`
   color: #ff0000;
   font-size: 10px;

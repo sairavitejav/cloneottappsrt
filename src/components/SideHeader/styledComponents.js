@@ -8,11 +8,20 @@ export const SideContainer = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 89vh;
-  margin-right: 30px;
+  min-height: 100vh;
   margin-top: 80px;
   padding-top: 20px;
   width: 20%;
+  z-index: 5;
+
+  @media screen and (max-width: 768px) {
+    width: 70px;
+    padding-left: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 `
 
 export const LinksContainer = styled.div`
@@ -23,7 +32,10 @@ export const LinksContainer = styled.div`
 
 export const Links = styled(NavLink)`
   text-decoration: none;
-  padding: 10px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+
   &.active-link {
     background-color: ${props => (props.isDarkTheme ? '#7e858e' : '#d7dfe9')};
     .icon {
@@ -38,37 +50,73 @@ export const IconLinkContainer = styled.div`
 `
 
 export const Icon = styled.div`
-  font-size: 20px;
+  font-size: 22px;
   margin-right: 20px;
   color: ${props => (props.isDarkTheme ? '#ebebeb' : '#383838')};
+
+  @media screen and (max-width: 768px) {
+    font-size: 26px;
+    margin-right: 0;
+  }
 `
 
 export const LinkHeader = styled.p`
   color: ${props => (props.isDarkTheme ? '#ffffff' : '#383838')};
-  font-size: 20px;
+  font-size: 18px;
+  margin: 0;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 10px 0;
+
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `
 
 export const ContactHeader = styled.p`
   color: ${props => (props.isDarkTheme ? '#ffffff' : '#00306e')};
   font-size: 20px;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `
 
 export const SocialContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
 `
 
 export const SocialIcon = styled.img`
-  color: #316ff6;
-  width: 40px;
-  margin-right: 10px;
+  width: 30px;
+  margin: 5px;
+
+  @media screen and (max-width: 480px) {
+    width: 24px;
+    margin: 5px 8px;
+  }
 `
 
 export const ContactDesc = styled.p`
   color: ${props => (props.isDarkTheme ? '#ffffff' : '#00306e')};
   font-size: 15px;
+  margin-top: 10px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
